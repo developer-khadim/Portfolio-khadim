@@ -1,42 +1,38 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isIndexOpen, setIsIndexOpen] = useState(false);
-  const location = useLocation(); 
-
+  const location = useLocation();
+  
   const menuItems = [
     { id: "001", title: "About Me", subtitle: "Introduction & Background", path: "/about" },
     { id: "002", title: "My Work", subtitle: "Case study walkthrough", path: "/work" },
     { id: "003", title: "Contact", subtitle: "How to contact me", path: "/contact" },
   ];
 
-  const handleNavigation = (path) => {
-    window.location.href = path;
-    setIsIndexOpen(false);
-  };
-
+  // Remove the handleNavigation function as we'll use Link directly
+  
   // Determine the current page based on the path
   const currentPage = menuItems.find((item) => item.path === location.pathname)?.title || "Index";
-
+  
   return (
     <>
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 bg-transparent z-50">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
           {/* Logo */}
-          <a href="/" className="text-white text-xl flex items-center font-bold">
+          <Link to="/" className="text-white text-xl flex items-center font-bold">
             <img src={logo} alt="logo" className="mr-2" />
             Khadim
-          </a>
-
+          </Link>
           {/* Dynamic Button */}
           <button
             onClick={() => setIsIndexOpen(true)}
             className="px-6 py-3 text-white font-bold bg-black border border-white/20 rounded-full hover:bg-white/10 transition-all"
           >
-            {currentPage} {/* Dynamically updates based on the current page */}
+            {currentPage}
           </button>
         </div>
       </nav>
@@ -60,10 +56,11 @@ const Navbar = () => {
               {/* Modal Content */}
               <div className="space-y-8">
                 {menuItems.map((item) => (
-                  <button
+                  <Link
                     key={item.id}
-                    onClick={() => handleNavigation(item.path)}
+                    to={item.path}
                     className="block group w-full text-left"
+                    onClick={() => setIsIndexOpen(false)}
                   >
                     <div className="flex flex-col md:flex-row md:items-center font-bold justify-between py-6 border-t border-white/10">
                       <div className="flex items-center gap-6 mb-2 md:mb-0">
@@ -78,7 +75,7 @@ const Navbar = () => {
                         </p>
                       </div>
                     </div>
-                  </button>
+                  </Link>
                 ))}
               </div>
             </div>
