@@ -1,5 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AboutText from "../components/AboutText";
+import Experience from "../components/Experience";
+import AboutTexttwo from "../components/AboutTexttwo";
+import Soft from "../components/about/Soft";
 
 const About = () => (
   <>
@@ -37,39 +41,10 @@ const About = () => (
         </nav>
       </div>
     </div>
-
-    {/* Content Section */}
-    <div className="min-h-screen w-full bg-black px-4 sm:px-8 md:px-16 lg:px-32 xl:px-52">
-      <div className="py-20 sm:py-32 md:py-40 lg:py-60">
-        <p
-          className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-transparent bg-clip-text break-words"
-          style={{
-            backgroundImage:
-              'linear-gradient(45deg, #FCC188 0%, #7042D2 65%, #2E008E 100%)',
-          }}
-        >
-          Hello 👋 I'm Khadim Ali, a React Front-End
-        </p>
-        <p
-          className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-transparent bg-clip-text py-4 sm:py-6 md:py-8 lg:py-10 break-words"
-          style={{
-            backgroundImage:
-              'linear-gradient(45deg, #FCC188 0%, #7042D2 65%, #2E008E 100%)',
-          }}
-        >
-          Developer passionate about creating
-        </p>
-        <p
-          className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-transparent bg-clip-text break-words"
-          style={{
-            backgroundImage:
-              'linear-gradient(45deg, #FCC188 0%, #7042D2 65%, #2E008E 100%)',
-          }}
-        >
-          dynamic and responsive web applications.
-        </p>
-      </div>
-    </div>
+    <AboutText/>
+    <Experience/>
+    <AboutTexttwo/>
+    <Soft/>
   </>
 );
 
