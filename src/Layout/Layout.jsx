@@ -1,3 +1,4 @@
+// Layout.jsx
 import React, { useState, useEffect, useCallback } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -8,25 +9,17 @@ const Layout = () => {
   const [isHoveringNavbar, setIsHoveringNavbar] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check if device is mobile
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    
-    // Initial check
     checkMobile();
-    
-    // Add resize listener
     window.addEventListener('resize', checkMobile);
-    
-    // Cleanup
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const updateCursorLag = useCallback(() => {
     if (isMobile) return;
-    
     setCursorLag((prev) => ({
       x: prev.x + (cursorPosition.x - prev.x) * 0.25,
       y: prev.y + (cursorPosition.y - prev.y) * 0.25,
@@ -35,7 +28,6 @@ const Layout = () => {
 
   useEffect(() => {
     if (isMobile) return;
-
     let animationFrameId;
     
     const handleMouseMove = (event) => {
@@ -64,12 +56,14 @@ const Layout = () => {
   const handleNavbarMouseLeave = () => !isMobile && setIsHoveringNavbar(false);
 
   return (
-    <div
-      style={{
-        background: 'linear-gradient(45deg, rgb(0, 0, 0) 32%, rgb(112, 66, 210) 60%, rgb(232, 187, 255) 100%)',
-      }}
-      className="text-white min-h-screen relative overflow-hidden"
-    >
+    <div className="min-h-screen w-full relative overflow-hidden">
+      <div 
+        className="fixed inset-0 w-full h-full z-0"
+        style={{
+          background: 'linear-gradient(45deg, rgb(0, 0, 0) 32%, rgb(112, 66, 210) 60%, rgb(232, 187, 255) 100%)',
+        }}
+      />
+      
       {!isMobile && (
         <>
           <div
@@ -104,7 +98,7 @@ const Layout = () => {
         <Navbar />
       </div>
       
-      <main className="relative z-10">
+      <main className="relative z-10 text-white">
         <Outlet />
       </main>
     </div>

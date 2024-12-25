@@ -7,7 +7,7 @@ const Home = () => {
         <div className="flex flex-col justify-center items-center select-none">
           {/* Title */}
           <h1 className="text-white font-semibold leading-none tracking-tight relative">
-            <span className="block text-7xl sm:text-8xl md:text-9xl lg:text-[200px] xl:text-[230px] transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-blue-600 to-purple-500">
+            <span className="block text-7xl sm:text-8xl md:text-9xl lg:text-[200px] xl:text-[230px] transition-all duration-300 hover:bg-clip-text hover:bg-gradient-to-r from-blue-600 to-purple-500">
               FOLIO
             </span>
           </h1>
