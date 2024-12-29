@@ -10,7 +10,13 @@ import js from "../../assets/js.png";
 import reactIcon from "../../assets/react-js-icon.png";
 import tailwindcss from "../../assets/tailwind-css-icon.png";
 import bootstrap from "../../assets/bootstrap.png";
-
+import brave from '../../assets/brave.png';
+import vercel from '../../assets/vercel.png';
+import github from '../../assets/github.png';
+import canva from '../../assets/canva.png';
+import Material from '../../assets/MaterialUI.png'
+import Shadcn from '../../assets/ShadcnUI.png';
+ 
 gsap.registerPlugin(ScrollTrigger);
 
 const Soft = () => {
@@ -56,8 +62,12 @@ const Soft = () => {
   const SoftItems = [
     { iconPath: vsIcon, title: "VS Code" },
     { iconPath: sublimeIcon, title: "Sublime Text" },
+    { iconPath: github, title: "Gitub" },
     { iconPath: figmaIcon, title: "Figma" },
     { iconPath: adobeIcon, title: "Adobe" },
+    { iconPath: brave, title: "Brave Browser" },
+    { iconPath: canva, title: "Canva" },
+    { iconPath: vercel, title: "Vercel" },
   ];
 
   const SkillsItem = [
@@ -67,6 +77,8 @@ const Soft = () => {
     { iconPath: reactIcon, title: "React JS" },
     { iconPath: tailwindcss, title: "Tailwind CSS" },
     { iconPath: bootstrap, title: "Bootstrap" },
+    { iconPath: Material, title: "Material UI" },
+    { iconPath: Shadcn, title: "Shadcn UI" },
   ];
 
   const GridSection = ({ items, title, refName, itemClass }) => (
