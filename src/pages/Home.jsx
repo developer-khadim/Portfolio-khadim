@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+        document.title = 'Home | Khadim-portfolio';
+      }, []);
   return (
     <div className="min-h-screen w-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
       <div className="max-w-7xl mx-auto w-full">

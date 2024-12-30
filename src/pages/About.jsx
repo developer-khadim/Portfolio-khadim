@@ -11,6 +11,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   useEffect(() => {
+    document.title = 'About Me | Khadim-portfolio';
+  }, []);
+
+  useEffect(() => {
     // Smooth scrolling setup
     gsap.to(window, {
       scrollTo: { y: "max", autoKill: false },

@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from "react-router-dom";
 
 const MyWork = () => {
+  useEffect(() => {
+        document.title = 'My Projects | Khadim-portfolio';
+      }, []);
   return (
     <div className="h-screen w-auto flex justify-center items-center">
     <div className="flex flex-col items-center gap-5">
